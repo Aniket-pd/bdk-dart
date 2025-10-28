@@ -28,3 +28,4 @@ Thumbs.db
 libbdkffi.*
 test_output.txt
 test output.txt
+lib/bdk.dart

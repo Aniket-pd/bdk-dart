@@ -7,6 +7,9 @@ echo "Running on $OS"
 dart --version
 dart pub get
 
+mkdir -p lib
+rm -f lib/bdk.dart
+
 # Install Rust targets if on macOS
 if [[ "$OS" == "Darwin" ]]; then
     LIBNAME=libbdkffi.dylib
@@ -21,9 +24,6 @@ fi
 cd ./bdk-ffi/bdk-ffi/
 echo "Building bdk-ffi crate and generating Dart bindings..."
 cargo build --profile dev -p bdk-ffi
-# NOTE: The current uniffi-bindgen CLI in this toolchain does not support '--language dart'.
-# We keep the previously generated Dart bindings checked in under ../lib/bdk.dart.
-# To regenerate Dart bindings, run the appropriate generator from a toolchain that supports Dart.
 
 # Generate Dart bindings using local uniffi-bindgen wrapper
 (cd ../../ && cargo run --profile dev --bin uniffi-bindgen -- --language dart --library bdk-ffi/bdk-ffi/target/debug/$LIBNAME --out-dir lib/)
