@@ -19,8 +19,7 @@ void main() {
         defaultLookahead,
       );
 
-      final addressInfo =
-          wallet.revealNextAddress(KeychainKind.external_);
+      final addressInfo = wallet.revealNextAddress(KeychainKind.external_);
       final expectedAddress = Address(expectedOfflineAddress, Network.signet);
 
       expect(addressInfo.address.isValidForNetwork(Network.testnet), isTrue);

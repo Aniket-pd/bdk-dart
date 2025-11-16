@@ -32,7 +32,9 @@ void main() {
       expect(wallet.balance().total.toSat(), equals(0));
     });
 
-    test('single-descriptor wallet returns identical external/internal addresses', () {
+    test(
+        'single-descriptor wallet returns identical external/internal addresses',
+        () {
       final persister = Persister.newInMemory();
       final wallet = Wallet.createSingle(
         buildBip84Descriptor(Network.testnet),

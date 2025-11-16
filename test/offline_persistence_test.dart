@@ -28,8 +28,7 @@ void main() {
         defaultLookahead,
       );
 
-      final addressInfo =
-          wallet.revealNextAddress(KeychainKind.external_);
+      final addressInfo = wallet.revealNextAddress(KeychainKind.external_);
       final expectedAddress = Address(expectedPersistedAddress, Network.signet);
 
       expect(addressInfo.index, equals(7));
@@ -44,13 +43,13 @@ void main() {
       final persister = Persister.newSqlite(dbPath);
       final wallet = Wallet.load(
         buildDescriptor(persistencePublicDescriptorString, Network.signet),
-        buildDescriptor(persistencePublicChangeDescriptorString, Network.signet),
+        buildDescriptor(
+            persistencePublicChangeDescriptorString, Network.signet),
         persister,
         defaultLookahead,
       );
 
-      final addressInfo =
-          wallet.revealNextAddress(KeychainKind.external_);
+      final addressInfo = wallet.revealNextAddress(KeychainKind.external_);
 
       expect(addressInfo.index, equals(7));
       final expectedAddress = Address(expectedPersistedAddress, Network.signet);

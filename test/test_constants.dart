@@ -31,10 +31,8 @@ const multipathDescriptorString =
 const privateMultipathDescriptorString =
     "tprv8ZgxMBicQKsPf2qfrEygW6fdYseJDDrVnDv26PH5BHdvSuG6ecCbHqLVof9yZcMoM31z9ur3tTYbSnr1WBqbGX97CbXcmp5H6qeMpyvx35B/<0;1>/*)";
 
-const expectedOfflineAddress =
-    "tb1qhjys9wxlfykmte7ftryptx975uqgd6kcm6a7z4";
-const expectedPersistedAddress =
-    "tb1qan3lldunh37ma6c0afeywgjyjgnyc8uz975zl2";
+const expectedOfflineAddress = "tb1qhjys9wxlfykmte7ftryptx975uqgd6kcm6a7z4";
+const expectedPersistedAddress = "tb1qan3lldunh37ma6c0afeywgjyjgnyc8uz975zl2";
 
 Descriptor buildDescriptor(String descriptor, Network network) =>
     Descriptor(descriptor, network);
